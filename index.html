@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <!-- SEO Description for Google -->
+  <meta name="description" content="Free Fire data calculator. Convert hours to MB and GB instantly. Check how much data FF uses per hour. Fast, free, mobile friendly.">
+  <meta name="keywords" content="free fire data calculator, ff data usage, how much data free fire uses, mb to gb converter">
+  <meta name="author" content="FF Calculator">
+  
+  <title>FF Data Calculator - Hours to MB/GB Converter</title>
+  
+  <style>
+    * {margin: 0; padding: 0; box-sizing: border-box;}
+    body {
+      font-family: 'Segoe UI', sans-serif;
+      background: linear-gradient(135deg, #0a0a0a 0%, #1a1a1a 100%);
+      color: #fff; min-height: 100vh;
+      display: flex; justify-content: center; align-items: center;
+      padding: 20px;
+    }
+    .container {
+      background: #151515; border: 2px solid #00ff88;
+      border-radius: 20px; padding: 40px 30px;
+      max-width: 400px; width: 100%;
+      box-shadow: 0 0 30px rgba(0, 255, 136, 0.3);
+      text-align: center;
+    }
+    h1 {color: #00ff88; margin-bottom: 10px; font-size: 28px; text-shadow: 0 0 10px rgba(0, 255, 136, 0.5);}
+    .subtitle {color: #aaa; font-size: 14px; margin-bottom: 30px;}
+    input {
+      width: 100%; padding: 15px; background: #0a0a0a;
+      border: 2px solid #00ff88; border-radius: 10px;
+      color: #00ff88; font-size: 18px; text-align: center;
+      outline: none; margin-bottom: 20px;
+    }
+    input:focus {box-shadow: 0 0 15px rgba(0, 255, 136, 0.6);}
+    button {
+      width: 100%; padding: 15px; background: #00ff88;
+      border: none; border-radius: 10px; color: #000;
+      font-size: 18px; font-weight: bold; cursor: pointer;
+      transition: 0.3s;
+    }
+    button:hover {background: #00cc6a; box-shadow: 0 0 20px rgba(0, 255, 136, 0.6);}
+    .result {
+      margin-top: 25px; padding: 20px; background: #0a0a0a;
+      border-radius: 10px; border: 1px solid #00ff88;
+      font-size: 20px; color: #00ff88;
+      min-height: 60px; display: flex; align-items: center; justify-content: center;
+    }
+    .ad-space {
+      margin-top: 30px; padding: 15px; background: #0a0a0a;
+      border: 1px dashed #00ff88; border-radius: 10px;
+      color: #555; font-size: 12px;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h1>FF Data Calculator</h1>
+    <p class="subtitle">Know your Free Fire data usage in 1 sec</p>
+    
+    <input type="number" id="hours" placeholder="Enter hours played" step="0.1">
+    <button onclick="calculate()">Calculate Data</button>
+    
+    <div class="result" id="result">Result go show here</div>
+    
+    <!-- Ad space - paste Adsterra code here when ready -->
+    <div class="ad-space">Ad space - money go dey here</div>
+  </div>
+  
+  <script>
+    function calculate() {
+      const hours = document.getElementById('hours').value;
+      const result = document.getElementById('result');
+      if(hours === '' || hours <= 0) {
+        result.innerHTML = 'Please enter valid hours';
+        return;
+      }
+      const mb = hours * 80;
+      const gb = (mb / 1024).toFixed(2);
+      result.innerHTML = `${mb} MB <br> ≈ ${gb} GB`;
+    }
+    document.getElementById('hours').addEventListener('keypress', function(e) {
+      if(e.key === 'Enter') calculate();
+    });
+  </script>
+</body>
+</html>
