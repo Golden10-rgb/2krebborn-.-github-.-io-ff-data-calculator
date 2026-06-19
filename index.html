@@ -289,7 +289,7 @@
   </footer>
 
   <!-- Phonk Audio -->
-  <audio id="phonkAudio" loop preload="auto">
+  <audio id="phonkAudio" loop preload="auto" playsinline>
     <source src="https://cdn.pixabay.com/audio/2024/11/25/audio_94c27f3a2b.mp3" type="audio/mpeg">
   </audio>
 
@@ -318,26 +318,33 @@
       }
     }
 
-    function togglePhonk() {
-      const btn = document.getElementById('phonkBtn');
-      const audio = document.getElementById('phonkAudio');
+   function togglePhonk() {
+  const btn = document.getElementById('phonkBtn');
+  const audio = document.getElementById('phonkAudio');
 
-      if (!phonkPlaying) {
-        audio.volume = 0.5;
-        audio.play().then(() => {
-          btn.textContent = '🔇 Stop Phonk';
-          btn.classList.add('active');
-          phonkPlaying = true;
-        }).catch(err => {
-          alert('Tap again to play. Browser blocked sound. Check volume + unmute site.');
-        });
-      } else {
-        audio.pause();
-        btn.textContent = '🎵 Play Phonk';
-        btn.classList.remove('active');
-        phonkPlaying = false;
-      }
-    }
+  if (!phonkPlaying) {
+    audio.volume = 0.4;
+    audio.play().then(() => {
+      btn.textContent = '🔇 Stop Phonk';
+      btn.classList.add('active');
+      phonkPlaying = true;
+    }).catch(err => {
+      // Safari fallback: try loading first
+      audio.load();
+      setTimeout(() => {
+        audio.play();
+        btn.textContent = '🔇 Stop Phonk';
+        btn.classList.add('active');
+        phonkPlaying = true;
+      }, 500);
+    });
+  } else {
+    audio.pause();
+    btn.textContent = '🎵 Play Phonk';
+    btn.classList.remove('active');
+    phonkPlaying = false;
+  }
+}
 
     function calculateData() {
       const hours = document.getElementById('dataHours').value;
