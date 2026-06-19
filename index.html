@@ -3,9 +3,9 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="2K REBBORN Free Fire Data Calculator. Convert hours to MB and GB instantly. Check Free Fire data usage. Fast, free, mobile friendly.">
-  <meta name="keywords" content="2k rebborn, free fire data calculator, ff data usage, free fire mb gb, garena free fire data">
-  <title>2K REBBORN - Free Fire Data Calculator</title>
+  <meta name="description" content="2K REBBORN Free Fire Tools. Data calculator, diamonds price calculator, ping test. Convert hours to MB/GB instantly. Fast, free, mobile friendly.">
+  <meta name="keywords" content="2k rebborn, free fire data calculator, ff diamonds calculator, free fire ping test, ff data usage">
+  <title>2K REBBORN - Free Fire Tools</title>
   
   <style>
     * {margin: 0; padding: 0; box-sizing: border-box;}
@@ -14,7 +14,7 @@
       background: linear-gradient(135deg, #0a0a0a 0%, #1a1a1a 100%);
       color: #fff; min-height: 100vh;
       display: flex; justify-content: center; align-items: center;
-      padding: 20px;
+      padding: 20px; flex-direction: column; gap: 30px;
     }
     .container {
       background: #151515; border: 2px solid #00ff88;
@@ -47,18 +47,49 @@
       margin-top: 25px; padding: 20px; background: #0a0a0a;
       border-radius: 10px; border: 1px solid #00ff88;
       font-size: 20px; color: #00ff88;
-      min-height: 60px; display: flex; align-items: center; justify-content: center;
+      min-height: 60px; display: flex; align-items: center; justify-content: center; flex-direction: column;
     }
     .ad-wrapper {
       margin-top: 30px; display:flex; justify-content:center;
     }
+    .nav-links {
+      margin-bottom: 20px;
+    }
+    .nav-links a {
+      color: #00ff88; text-decoration: none; margin: 0 10px;
+      font-size: 14px; border-bottom: 1px solid #00ff88;
+    }
+    .nav-links a:hover {color: #fff;}
+    .share-btn {
+      margin-top: 15px;
+      padding: 10px 20px;
+      background: #25D366;
+      color: #fff;
+      border: none;
+      border-radius: 8px;
+      font-size: 14px;
+      font-weight: bold;
+      cursor: pointer;
+      display: none;
+    }
+    .share-btn:hover {
+      background: #1ebe5b;
+      box-shadow: 0 0 15px rgba(37, 211, 102, 0.6);
+    }
   </style>
 </head>
 <body>
-  <div class="container">
+  
+  <!-- TOOL 1: Data Calculator -->
+  <div class="container" id="data">
     <div class="brand">2K REBBORN</div>
     <h1>Free Fire Data Calculator</h1>
-    <p class="subtitle">How much MB Free Fire consume? Find out in 1 sec</p>
+    <p class="subtitle">How much MB do Free Fire consume? Find out in 1 sec</p>
+    
+    <div class="nav-links">
+      <a href="#diamonds">Diamond Price</a>
+      <a href="#ping">Ping Test</a>
+    </div>
     
     <input type="number" id="hours" placeholder="Enter hours played" step="0.1">
     
@@ -67,42 +98,169 @@
       <button class="clear" onclick="clearAll()">Clear</button>
     </div>
     
-    <div class="result" id="result">Result go show here</div>
+    <div class="result" id="result">
+      <span>Result go show here</span>
+      <button class="share-btn" id="shareBtn" onclick="shareWhatsApp()">📲 Share on WhatsApp</button>
+    </div>
+    <small style="color:#666; margin-top:10px; display:block">FF uses ~80MB/hour average</small>
     
-    <!-- Adsterra Banner 300x250 - Money dey here -->
+    <!-- Adsterra Banner 300x250 -->
     <div class="ad-wrapper">
-    <script>
-      atOptions = {
-        'key' : '06be784b72bb21a63603f1efd329fcb7',
-        'format' : 'iframe',
-        'height' : 250,
-        'width' : 300,
-        'params' : {}
-      };
-    </script>
-    <script src="https://www.highperformanceformat.com/06be784b72bb21a63603f1efd329fcb7/invoke.js"></script>
+      <script>
+        atOptions = {
+          'key' : '06be784b72bb21a63603f1efd329fcb7',
+          'format' : 'iframe',
+          'height' : 250,
+          'width' : 300,
+          'params' : {}
+        };
+      </script>
+      <script src="https://www.highperformanceformat.com/06be784b72bb21a63603f1efd329fcb7/invoke.js"></script>
+    </div>
+  </div>
+  
+  <!-- TOOL 2: Diamonds Calculator -->
+  <div class="container" id="diamonds">
+    <div class="brand">2K REBBORN</div>
+    <h1>FF Diamonds Calculator</h1>
+    <p class="subtitle">Check diamond prices instantly</p>
+    
+    <div class="nav-links">
+      <a href="#data">Data Calc</a>
+      <a href="#ping">Ping Test</a>
+    </div>
+    
+    <input type="number" id="diamonds" placeholder="Enter diamonds needed" step="1">
+    
+    <div class="btns">
+      <button onclick="calcDiamonds()">Calculate Price</button>
+      <button class="clear" onclick="clearDiamonds()">Clear</button>
+    </div>
+    
+    <div class="result" id="diamondResult">Result go show here</div>
+    <small style="color:#666; margin-top:10px; display:block">Top up via Codashop/UniPin</small>
+    
+    <!-- Adsterra Native Ad - Tool 2 -->
+    <div class="ad-wrapper">
+      <script>
+        atOptions = {
+          'key' : 'YOUR_NATIVE_KEY_HERE', // Replace with your Adsterra native ad key
+          'format' : 'iframe',
+          'height' : 90,
+          'width' : 728,
+          'params' : {}
+        };
+      </script>
+      <script src="https://www.highperformanceformat.com/YOUR_NATIVE_KEY_HERE/invoke.js"></script>
+    </div>
+  </div>
+  
+  <!-- TOOL 3: Ping Test -->
+  <div class="container" id="ping">
+    <div class="brand">2K REBBORN</div>
+    <h1>FF Ping Checker</h1>
+    <p class="subtitle">Check if your ping is good for rank</p>
+    
+    <div class="nav-links">
+      <a href="#data">Data Calc</a>
+      <a href="#diamonds">Diamond Price</a>
+    </div>
+    
+    <input type="number" id="ping" placeholder="Enter your current ping ms">
+    
+    <div class="btns">
+      <button onclick="checkPing()">Check Ping</button>
+      <button class="clear" onclick="clearPing()">Clear</button>
+    </div>
+    
+    <div class="result" id="pingResult">Result go show here</div>
+    <small style="color:#666; margin-top:10px; display:block">Tip: Use 1.1.1.1 for low ping</small>
+    
+    <!-- Adsterra Native Ad - Tool 3 -->
+    <div class="ad-wrapper">
+      <script>
+        atOptions = {
+          'key' : 'YOUR_NATIVE_KEY_HERE', // Replace with your Adsterra native ad key
+          'format' : 'iframe',
+          'height' : 90,
+          'width' : 728,
+          'params' : {}
+        };
+      </script>
+      <script src="https://www.highperformanceformat.com/YOUR_NATIVE_KEY_HERE/invoke.js"></script>
     </div>
   </div>
   
   <script>
+    let lastResult = '';
+    
+    // Data Calculator
     function calculate() {
       const hours = document.getElementById('hours').value;
       const result = document.getElementById('result');
+      const shareBtn = document.getElementById('shareBtn');
       if(hours === '' || hours <= 0) {
-        result.innerHTML = 'Please enter valid hours';
+        result.innerHTML = 'Please enter valid hours <button class="share-btn" id="shareBtn" onclick="shareWhatsApp()" style="display:none">📲 Share on WhatsApp</button>';
         return;
       }
       const mb = hours * 80;
       const gb = (mb / 1024).toFixed(2);
-      result.innerHTML = `${mb} MB <br> ≈ ${gb} GB`;
+      lastResult = `I just calculated: ${hours}hrs of Free Fire = ${mb}MB ≈ ${gb}GB 📱\nCheck your FF data usage here: ${window.location.href}`;
+      result.innerHTML = `${mb} MB <br> ≈ ${gb} GB <button class="share-btn" id="shareBtn" onclick="shareWhatsApp()">📲 Share on WhatsApp</button>`;
+      document.getElementById('shareBtn').style.display = 'block';
     }
     function clearAll() {
       document.getElementById('hours').value = '';
-      document.getElementById('result').innerHTML = 'Result go show here';
+      document.getElementById('result').innerHTML = 'Result go show here <button class="share-btn" id="shareBtn" onclick="shareWhatsApp()" style="display:none">📲 Share on WhatsApp</button>';
+      lastResult = '';
     }
     document.getElementById('hours').addEventListener('keypress', function(e) {
       if(e.key === 'Enter') calculate();
     });
+    
+    // WhatsApp Share
+    function shareWhatsApp() {
+      if(lastResult === '') return;
+      const url = `https://wa.me/?text=${encodeURIComponent(lastResult)}`;
+      window.open(url, '_blank');
+    }
+    
+    // Diamonds Calculator
+    function calcDiamonds() {
+      const d = document.getElementById('diamonds').value;
+      const result = document.getElementById('diamondResult');
+      if(d === '' || d <= 0) {
+        result.innerHTML = 'Enter valid diamonds';
+        return;
+      }
+      const price = Math.ceil(d * 2.5);
+      result.innerHTML = `${d} Diamonds <br> ≈ ₦${price}`;
+    }
+    function clearDiamonds() {
+      document.getElementById('diamonds').value = '';
+      document.getElementById('diamondResult').innerHTML = 'Result go show here';
+    }
+    
+    // Ping Checker
+    function checkPing() {
+      const p = document.getElementById('ping').value;
+      const result = document.getElementById('pingResult');
+      if(p === '' || p <= 0) {
+        result.innerHTML = 'Enter valid ping';
+        return;
+      }
+      let status = '';
+      if(p < 50) status = '🟢 Excellent - No lag';
+      else if(p < 100) status = '🟡 Good - Playable';
+      else if(p < 200) status = '🟠 High - Lag fit happen';
+      else status = '🔴 Very High - Use VPN';
+      
+      result.innerHTML = `${p} ms <br> ${status}`;
+    }
+    function clearPing() {
+      document.getElementById('ping').value = '';
+      document.getElementById('pingResult').innerHTML = 'Result go show here';
+    }
   </script>
 </body>
 </html>
