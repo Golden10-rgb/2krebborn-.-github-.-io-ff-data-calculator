@@ -3,9 +3,13 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="2K REBBORN Free Fire Tools. Data calculator, diamonds price calculator, ping test. Convert hours to MB/GB instantly. Fast, free, mobile friendly.">
-  <meta name="keywords" content="2k rebborn, free fire data calculator, ff diamonds calculator, free fire ping test, ff data usage">
-  <title>2K REBBORN - Free Fire Tools</title>
+  <meta name="description" content="2K REBBORN Esports Hub. Free Fire tools, CODM guides, PUBG tips. Data calculator, diamonds price, ping test, Phonk player. Fast, free, mobile friendly.">
+  <meta name="keywords" content="2k rebborn, free fire tools, codm pubg esports, ff data calculator, ff diamonds calculator, phonk music">
+  <title>2K REBBORN - Esports Hub</title>
+  
+  <!-- Google AdSense - Replace ca-pub-XXXXXXXXXXXXXXXX -->
+  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-XXXXXXXXXXXXXXXX"
+     crossorigin="anonymous"></script>
   
   <style>
     * {margin: 0; padding: 0; box-sizing: border-box;}
@@ -13,18 +17,28 @@
       font-family: 'Segoe UI', sans-serif;
       background: linear-gradient(135deg, #0a0a0a 0%, #1a1a1a 100%);
       color: #fff; min-height: 100vh;
-      display: flex; justify-content: center; align-items: center;
-      padding: 20px; flex-direction: column; gap: 30px;
+      padding: 20px;
     }
+    header {
+      text-align: center;
+      padding: 40px 20px;
+      background: linear-gradient(135deg, #00ff88 0%, #ff0040 100%);
+      border-radius: 20px;
+      margin-bottom: 40px;
+    }
+    header h1 {font-size: 2.5rem; margin-bottom: 10px; text-shadow: 0 0 10px rgba(0,0,0.5);}
+    header p {font-size: 1.2rem; margin-bottom: 20px;}
+    
     .container {
       background: #151515; border: 2px solid #00ff88;
       border-radius: 20px; padding: 40px 30px;
-      max-width: 400px; width: 100%;
+      max-width: 500px; width: 100%;
+      margin: 30px auto;
       box-shadow: 0 0 30px rgba(0, 255, 136, 0.3);
       text-align: center;
     }
     .brand {color: #00ff88; font-size: 14px; letter-spacing: 3px; margin-bottom: 5px; font-weight: bold;}
-    h1 {color: #00ff88; margin-bottom: 10px; font-size: 26px; text-shadow: 0 0 10px rgba(0, 255, 136, 0.5);}
+    h2 {color: #00ff88; margin-bottom: 10px; font-size: 26px; text-shadow: 0 0 10px rgba(0, 255, 136, 0.5);}
     .subtitle {color: #aaa; font-size: 14px; margin-bottom: 30px;}
     input {
       width: 100%; padding: 15px; background: #0a0a0a;
@@ -43,23 +57,34 @@
     button:hover {background: #00cc6a; box-shadow: 0 0 20px rgba(0, 255, 136, 0.6);}
     button.clear {background: #333; color: #00ff88;}
     button.clear:hover {background: #444;}
+    #phonkBtn {background: #ff0040; color: #fff;}
+    #phonkBtn.active {background: #ffaa00; color: #000;}
+    
     .result {
       margin-top: 25px; padding: 20px; background: #0a0a0a;
       border-radius: 10px; border: 1px solid #00ff88;
       font-size: 20px; color: #00ff88;
       min-height: 60px; display: flex; align-items: center; justify-content: center; flex-direction: column;
     }
-    .ad-wrapper {
-      margin-top: 30px; display:flex; justify-content:center;
+    .ad-wrapper {margin-top: 30px; display:flex; justify-content:center;}
+    .ad-container {
+      background: #1a1a1a;
+      padding: 20px;
+      margin: 30px auto;
+      text-align: center;
+      border-radius: 10px;
+      border: 1px dashed #444;
+      max-width: 500px;
     }
-    .nav-links {
-      margin-bottom: 20px;
-    }
+    .ad-label { color: #888; font-size: 0.8rem; margin-bottom: 10px; }
+    
+    .nav-links {margin-bottom: 20px;}
     .nav-links a {
       color: #00ff88; text-decoration: none; margin: 0 10px;
       font-size: 14px; border-bottom: 1px solid #00ff88;
     }
     .nav-links a:hover {color: #fff;}
+    
     .share-btn {
       margin-top: 15px;
       padding: 10px 20px;
@@ -76,19 +101,45 @@
       background: #1ebe5b;
       box-shadow: 0 0 15px rgba(37, 211, 102, 0.6);
     }
+    
+    footer {
+      text-align: center;
+      padding: 30px 20px;
+      margin-top: 60px;
+      border-top: 2px solid #00ff88;
+    }
   </style>
 </head>
 <body>
   
+  <header>
+    <h1>2K REBBORN Esports Hub</h1>
+    <p>Free Fire Tools + CODM x PUBG Guides + Phonk Music</p>
+    <button id="phonkBtn" onclick="togglePhonk()">🎵 Play Phonk</button>
+  </header>
+
+  <!-- Top AdSense -->
+  <div class="ad-container">
+    <div class="ad-label">Advertisement</div>
+    <ins class="adsbygoogle"
+         style="display:block"
+         data-ad-client="ca-pub-XXXXXXXXXXXXXXXX"
+         data-ad-slot="1234567890"
+         data-ad-format="auto"
+         data-full-width-responsive="true"></ins>
+    <script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
+  </div>
+
   <!-- TOOL 1: Data Calculator -->
   <div class="container" id="data">
     <div class="brand">2K REBBORN</div>
-    <h1>Free Fire Data Calculator</h1>
-    <p class="subtitle">How much MB do Free Fire consume? Find out in 1 sec</p>
+    <h2>Free Fire Data Calculator</h2>
+    <p class="subtitle">How much MB do Free Fire consume?</p>
     
     <div class="nav-links">
-      <a href="#diamonds">Diamond Price</a>
-      <a href="#ping">Ping Test</a>
+      <a href="#diamonds">Diamonds</a>
+      <a href="#ping">Ping</a>
+      <a href="#guides">CODM/PUBG</a>
     </div>
     
     <input type="number" id="hours" placeholder="Enter hours played" step="0.1">
@@ -99,12 +150,12 @@
     </div>
     
     <div class="result" id="result">
-      <span>Result go show here</span>
+      <span>Result will show here</span>
       <button class="share-btn" id="shareBtn" onclick="shareWhatsApp()">📲 Share on WhatsApp</button>
     </div>
     <small style="color:#666; margin-top:10px; display:block">FF uses ~80MB/hour average</small>
     
-    <!-- Adsterra Banner 300x250 -->
+    <!-- Adsterra Banner -->
     <div class="ad-wrapper">
       <script>
         atOptions = {
@@ -122,12 +173,13 @@
   <!-- TOOL 2: Diamonds Calculator -->
   <div class="container" id="diamonds">
     <div class="brand">2K REBBORN</div>
-    <h1>FF Diamonds Calculator</h1>
+    <h2>FF Diamonds Calculator</h2>
     <p class="subtitle">Check diamond prices instantly</p>
     
     <div class="nav-links">
       <a href="#data">Data Calc</a>
-      <a href="#ping">Ping Test</a>
+      <a href="#ping">Ping</a>
+      <a href="#guides">CODM/PUBG</a>
     </div>
     
     <input type="number" id="diamonds" placeholder="Enter diamonds needed" step="1">
@@ -139,31 +191,18 @@
     
     <div class="result" id="diamondResult">Result go show here</div>
     <small style="color:#666; margin-top:10px; display:block">Top up via Codashop/UniPin</small>
-    
-    <!-- Adsterra Native Ad - Tool 2 -->
-    <div class="ad-wrapper">
-      <script>
-        atOptions = {
-          'key' : 'YOUR_NATIVE_KEY_HERE', // Replace with your Adsterra native ad key
-          'format' : 'iframe',
-          'height' : 90,
-          'width' : 728,
-          'params' : {}
-        };
-      </script>
-      <script src="https://www.highperformanceformat.com/YOUR_NATIVE_KEY_HERE/invoke.js"></script>
-    </div>
   </div>
   
   <!-- TOOL 3: Ping Test -->
   <div class="container" id="ping">
     <div class="brand">2K REBBORN</div>
-    <h1>FF Ping Checker</h1>
+    <h2>FF Ping Checker</h2>
     <p class="subtitle">Check if your ping is good for rank</p>
     
     <div class="nav-links">
       <a href="#data">Data Calc</a>
-      <a href="#diamonds">Diamond Price</a>
+      <a href="#diamonds">Diamonds</a>
+      <a href="#guides">CODM/PUBG</a>
     </div>
     
     <input type="number" id="ping" placeholder="Enter your current ping ms">
@@ -175,24 +214,73 @@
     
     <div class="result" id="pingResult">Result go show here</div>
     <small style="color:#666; margin-top:10px; display:block">Tip: Use 1.1.1.1 for low ping</small>
+  </div>
+
+  <!-- Middle AdSense -->
+  <div class="ad-container">
+    <div class="ad-label">Advertisement</div>
+    <ins class="adsbygoogle"
+         style="display:block"
+         data-ad-client="ca-pub-XXXXXXXXXXXXXXXX"
+         data-ad-slot="0987654321"
+         data-ad-format="auto"
+         data-full-width-responsive="true"></ins>
+    <script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
+  </div>
+
+  <!-- TOOL 4: CODM x PUBG Guides -->
+  <div class="container" id="guides">
+    <div class="brand">2K REBBORN</div>
+    <h2>CODM x PUBG Esports</h2>
+    <p class="subtitle">Pro tips & tournament news</p>
     
-    <!-- Adsterra Native Ad - Tool 3 -->
-    <div class="ad-wrapper">
-      <script>
-        atOptions = {
-          'key' : 'YOUR_NATIVE_KEY_HERE', // Replace with your Adsterra native ad key
-          'format' : 'iframe',
-          'height' : 90,
-          'width' : 728,
-          'params' : {}
-        };
-      </script>
-      <script src="https://www.highperformanceformat.com/YOUR_NATIVE_KEY_HERE/invoke.js"></script>
+    <div class="nav-links">
+      <a href="#data">Data Calc</a>
+      <a href="#diamonds">Diamonds</a>
+      <a href="#ping">Ping</a>
+    </div>
+    
+    <div style="text-align:left; margin-top:20px;">
+      <h3 style="color:#ff0040; margin-bottom:10px;">🎮 CODM Tips</h3>
+      <p style="margin-bottom:15px;">Best BR landing spots + MP meta guns for 2026</p>
+      
+      <h3 style="color:#8000ff; margin-bottom:10px;">🔫 PUBG Tips</h3>
+      <p style="margin-bottom:15px;">Squad strategies + PMGC updates</p>
+      
+      <h3 style="color:#00ff88; margin-bottom:10px;">🎯 Pro Tip</h3>
+      <p>90fps + low graphics = less lag + more wins</p>
     </div>
   </div>
   
+  <footer>
+    <p>© 2026 2K REBBORN Esports Hub | Built for Gamers</p>
+  </footer>
+
+  <!-- Phonk Audio -->
+  <audio id="phonkAudio" loop>
+    <source src="https://cdn.pixabay.com/audio/2024/11/25/audio_94c27f3a2b.mp3" type="audio/mpeg">
+  </audio>
+
   <script>
     let lastResult = '';
+    let phonkPlaying = false;
+    
+    // Phonk Player
+    function togglePhonk() {
+      const btn = document.getElementById('phonkBtn');
+      const audio = document.getElementById('phonkAudio');
+      if (!phonkPlaying) {
+        audio.play();
+        btn.textContent = '🔇 Stop Phonk';
+        btn.classList.add('active');
+        phonkPlaying = true;
+      } else {
+        audio.pause();
+        btn.textContent = '🎵 Play Phonk';
+        btn.classList.remove('active');
+        phonkPlaying = false;
+      }
+    }
     
     // Data Calculator
     function calculate() {
