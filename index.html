@@ -3,14 +3,14 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="2K REBBORN Esports Hub. Free Fire tools, CODM guides, PUBG tips. Data calculator, diamonds price, ping test, Phonk player. Fast, free, mobile friendly.">
-  <meta name="keywords" content="2k rebborn, free fire tools, codm pubg esports, ff data calculator, ff diamonds calculator, phonk music">
-  <title>2K REBBORN - Esports Hub</title>
-  
+  <meta name="description" content="2K REBBORN Esports Tools. Data calculator, diamonds/CP/UC price calculator, ping test for Free Fire, CODM, PUBG. Fast, free, mobile friendly.">
+  <meta name="keywords" content="2k rebborn, free fire tools, codm tools, pubg tools, data calculator, diamonds cp uc calculator, ping test">
+  <title>2K REBBORN - Esports Tools Hub</title>
+
   <!-- Google AdSense - Replace ca-pub-XXXXXXXXXXXXXXXX -->
   <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-XXXXXXXXXXXXXXXX"
      crossorigin="anonymous"></script>
-  
+
   <style>
     * {margin: 0; padding: 0; box-sizing: border-box;}
     body {
@@ -24,22 +24,49 @@
       padding: 40px 20px;
       background: linear-gradient(135deg, #00ff88 0%, #ff0040 100%);
       border-radius: 20px;
-      margin-bottom: 40px;
+      margin-bottom: 20px;
+      max-width: 600px;
+      margin: 0 auto 20px auto;
     }
     header h1 {font-size: 2.5rem; margin-bottom: 10px; text-shadow: 0 0 10px rgba(0,0,0.5);}
-    header p {font-size: 1.2rem; margin-bottom: 20px;}
-    
-    .container {
+    header p {font-size: 1.1rem; margin-bottom: 20px;}
+
+    /* Bouncing Arrow */
+   .bounce-arrow {
+      text-align: center;
+      font-size: 2.5rem;
+      color: #00ff88;
+      animation: bounce 2s infinite;
+      cursor: pointer;
+    }
+    @keyframes bounce {
+      0%, 20%, 50%, 80%, 100% {transform: translateY(0);}
+      40% {transform: translateY(-20px);}
+      60% {transform: translateY(-10px);}
+    }
+
+  .container {
       background: #151515; border: 2px solid #00ff88;
       border-radius: 20px; padding: 40px 30px;
-      max-width: 500px; width: 100%;
+      max-width: 600px; width: 100%;
       margin: 30px auto;
       box-shadow: 0 0 30px rgba(0, 255, 136, 0.3);
       text-align: center;
     }
-    .brand {color: #00ff88; font-size: 14px; letter-spacing: 3px; margin-bottom: 5px; font-weight: bold;}
-    h2 {color: #00ff88; margin-bottom: 10px; font-size: 26px; text-shadow: 0 0 10px rgba(0, 255, 136, 0.5);}
-    .subtitle {color: #aaa; font-size: 14px; margin-bottom: 30px;}
+  .brand {color: #00ff88; font-size: 14px; letter-spacing: 3px; margin-bottom: 5px; font-weight: bold;}
+    h2 {color: #00ff88; margin-bottom: 10px; font-size: 26px;}
+  .subtitle {color: #aaa; font-size: 14px; margin-bottom: 20px;}
+
+  .game-selector {
+      display: flex; gap: 10px; margin-bottom: 25px; flex-wrap: wrap; justify-content: center;
+    }
+  .game-btn {
+      padding: 10px 20px; background: #222; border: 2px solid #444;
+      border-radius: 8px; color: #aaa; cursor: pointer; font-weight: bold;
+      transition: 0.3s;
+    }
+  .game-btn.active {background: #00ff88; color: #000; border-color: #00ff88;}
+
     input {
       width: 100%; padding: 15px; background: #0a0a0a;
       border: 2px solid #00ff88; border-radius: 10px;
@@ -47,7 +74,8 @@
       outline: none; margin-bottom: 15px;
     }
     input:focus {box-shadow: 0 0 15px rgba(0, 255, 136, 0.6);}
-    .btns {display: flex; gap: 10px; margin-bottom: 20px;}
+
+  .btns {display: flex; gap: 10px; margin-bottom: 20px;}
     button {
       flex: 1; padding: 15px; background: #00ff88;
       border: none; border-radius: 10px; color: #000;
@@ -56,36 +84,26 @@
     }
     button:hover {background: #00cc6a; box-shadow: 0 0 20px rgba(0, 255, 136, 0.6);}
     button.clear {background: #333; color: #00ff88;}
-    button.clear:hover {background: #444;}
     #phonkBtn {background: #ff0040; color: #fff;}
     #phonkBtn.active {background: #ffaa00; color: #000;}
-    
-    .result {
+
+  .result {
       margin-top: 25px; padding: 20px; background: #0a0a0a;
       border-radius: 10px; border: 1px solid #00ff88;
       font-size: 20px; color: #00ff88;
       min-height: 60px; display: flex; align-items: center; justify-content: center; flex-direction: column;
     }
-    .ad-wrapper {margin-top: 30px; display:flex; justify-content:center;}
-    .ad-container {
+  .ad-container {
       background: #1a1a1a;
       padding: 20px;
       margin: 30px auto;
       text-align: center;
       border-radius: 10px;
       border: 1px dashed #444;
-      max-width: 500px;
+      max-width: 600px;
     }
-    .ad-label { color: #888; font-size: 0.8rem; margin-bottom: 10px; }
-    
-    .nav-links {margin-bottom: 20px;}
-    .nav-links a {
-      color: #00ff88; text-decoration: none; margin: 0 10px;
-      font-size: 14px; border-bottom: 1px solid #00ff88;
-    }
-    .nav-links a:hover {color: #fff;}
-    
-    .share-btn {
+  .ad-label { color: #888; font-size: 0.8rem; margin-bottom: 10px; }
+  .share-btn {
       margin-top: 15px;
       padding: 10px 20px;
       background: #25D366;
@@ -97,183 +115,206 @@
       cursor: pointer;
       display: none;
     }
-    .share-btn:hover {
-      background: #1ebe5b;
-      box-shadow: 0 0 15px rgba(37, 211, 102, 0.6);
+
+    /* CODM PUBG Guides Section */
+   .guides-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 20px;
+      margin-top: 20px;
+      text-align: left;
     }
-    
+   .guide-card {
+      background: #1a1a1a;
+      padding: 25px;
+      border-radius: 15px;
+      border: 2px solid #333;
+    }
+   .guide-card h3 {margin-bottom: 10px; font-size: 1.3rem;}
+   .guide-card.codm h3 {color: #ff0040;}
+   .guide-card.pubg h3 {color: #8000ff;}
+
     footer {
       text-align: center;
       padding: 30px 20px;
       margin-top: 60px;
       border-top: 2px solid #00ff88;
+      max-width: 600px;
+      margin: 60px auto 0 auto;
     }
   </style>
 </head>
 <body>
-  
+
   <header>
-    <h1>2K REBBORN Esports Hub</h1>
-    <p>Free Fire Tools + CODM x PUBG Guides + Phonk Music</p>
+    <h1>2K REBBORN</h1>
+    <p>Free Fire + CODM + PUBG Tools Hub</p>
     <button id="phonkBtn" onclick="togglePhonk()">🎵 Play Phonk</button>
   </header>
+
+  <!-- Bouncing Arrow -->
+  <div class="bounce-arrow" onclick="document.getElementById('tools').scrollIntoView({behavior: 'smooth'})">
+    ↓
+  </div>
 
   <!-- Top AdSense -->
   <div class="ad-container">
     <div class="ad-label">Advertisement</div>
-    <ins class="adsbygoogle"
-         style="display:block"
-         data-ad-client="ca-pub-XXXXXXXXXXXXXXXX"
-         data-ad-slot="1234567890"
-         data-ad-format="auto"
-         data-full-width-responsive="true"></ins>
+    <ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-XXXXXXXXXXXXXXXX" data-ad-slot="1234567890" data-ad-format="auto" data-full-width-responsive="true"></ins>
     <script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
   </div>
 
-  <!-- TOOL 1: Data Calculator -->
-  <div class="container" id="data">
-    <div class="brand">2K REBBORN</div>
-    <h2>Free Fire Data Calculator</h2>
-    <p class="subtitle">How much MB do Free Fire consume?</p>
-    
-    <div class="nav-links">
-      <a href="#diamonds">Diamonds</a>
-      <a href="#ping">Ping</a>
-      <a href="#guides">CODM/PUBG</a>
+  <div id="tools">
+    <!-- TOOL 1: Data Calculator - All Games -->
+    <div class="container">
+      <div class="brand">2K REBBORN</div>
+      <h2>Data Usage Calculator</h2>
+      <p class="subtitle">Calculate MB/GB used per hour</p>
+
+      <div class="game-selector">
+        <button class="game-btn active" onclick="selectGame('data', 'ff', this)">Free Fire</button>
+        <button class="game-btn" onclick="selectGame('data', 'codm', this)">CODM</button>
+        <button class="game-btn" onclick="selectGame('data', 'pubg', this)">PUBG</button>
+      </div>
+
+      <input type="number" id="dataHours" placeholder="Enter hours played" step="0.1">
+
+      <div class="btns">
+        <button onclick="calculateData()">Calculate Data</button>
+        <button class="clear" onclick="clearData()">Clear</button>
+      </div>
+
+      <div class="result" id="dataResult">
+        <span>Select game and enter hours</span>
+        <button class="share-btn" id="dataShareBtn" onclick="shareData()">📲 Share on WhatsApp</button>
+      </div>
+      <small style="color:#666; margin-top:10px; display:block" id="dataNote">Free Fire uses ~80MB/hour average</small>
     </div>
-    
-    <input type="number" id="hours" placeholder="Enter hours played" step="0.1">
-    
-    <div class="btns">
-      <button onclick="calculate()">Calculate Data</button>
-      <button class="clear" onclick="clearAll()">Clear</button>
+
+    <!-- TOOL 2: Diamonds/CP/UC Calculator -->
+    <div class="container">
+      <div class="brand">2K REBBORN</div>
+      <h2>Diamonds / CP / UC Calculator</h2>
+      <p class="subtitle">Check top-up prices instantly</p>
+
+      <div class="game-selector">
+        <button class="game-btn active" onclick="selectGame('currency', 'ff', this)">FF Diamonds</button>
+        <button class="game-btn" onclick="selectGame('currency', 'codm', this)">CODM CP</button>
+        <button class="game-btn" onclick="selectGame('currency', 'pubg', this)">PUBG UC</button>
+      </div>
+
+      <input type="number" id="currencyAmount" placeholder="Enter Diamonds needed" step="1">
+
+      <div class="btns">
+        <button onclick="calculateCurrency()">Calculate Price</button>
+        <button class="clear" onclick="clearCurrency()">Clear</button>
+      </div>
+
+      <div class="result" id="currencyResult">Enter amount to see price</div>
+      <small style="color:#666; margin-top:10px; display:block" id="currencyNote">Rate: ₦2.5 per Diamond</small>
     </div>
-    
-    <div class="result" id="result">
-      <span>Result will show here</span>
-      <button class="share-btn" id="shareBtn" onclick="shareWhatsApp()">📲 Share on WhatsApp</button>
+
+    <!-- TOOL 3: Ping Test - All Games -->
+    <div class="container">
+      <div class="brand">2K REBBORN</div>
+      <h2>Ping Checker</h2>
+      <p class="subtitle">Test if your ping is good for ranked</p>
+
+      <div class="game-selector">
+        <button class="game-btn active" onclick="selectGame('ping', 'ff', this)">Free Fire</button>
+        <button class="game-btn" onclick="selectGame('ping', 'codm', this)">CODM</button>
+        <button class="game-btn" onclick="selectGame('ping', 'pubg', this)">PUBG</button>
+      </div>
+
+      <input type="number" id="pingInput" placeholder="Enter your current ping in ms">
+
+      <div class="btns">
+        <button onclick="checkPing()">Check Ping</button>
+        <button class="clear" onclick="clearPing()">Clear</button>
+      </div>
+
+      <div class="result" id="pingResult">Enter ping to check status</div>
+      <small style="color:#666; margin-top:10px; display:block">Tip: Use 1.1.1.1 for lower ping</small>
     </div>
-    <small style="color:#666; margin-top:10px; display:block">FF uses ~80MB/hour average</small>
-    
-    <!-- Adsterra Banner -->
-    <div class="ad-wrapper">
-      <script>
-        atOptions = {
-          'key' : '06be784b72bb21a63603f1efd329fcb7',
-          'format' : 'iframe',
-          'height' : 250,
-          'width' : 300,
-          'params' : {}
-        };
-      </script>
-      <script src="https://www.highperformanceformat.com/06be784b72bb21a63603f1efd329fcb7/invoke.js"></script>
-    </div>
-  </div>
-  
-  <!-- TOOL 2: Diamonds Calculator -->
-  <div class="container" id="diamonds">
-    <div class="brand">2K REBBORN</div>
-    <h2>FF Diamonds Calculator</h2>
-    <p class="subtitle">Check diamond prices instantly</p>
-    
-    <div class="nav-links">
-      <a href="#data">Data Calc</a>
-      <a href="#ping">Ping</a>
-      <a href="#guides">CODM/PUBG</a>
-    </div>
-    
-    <input type="number" id="diamonds" placeholder="Enter diamonds needed" step="1">
-    
-    <div class="btns">
-      <button onclick="calcDiamonds()">Calculate Price</button>
-      <button class="clear" onclick="clearDiamonds()">Clear</button>
-    </div>
-    
-    <div class="result" id="diamondResult">Result go show here</div>
-    <small style="color:#666; margin-top:10px; display:block">Top up via Codashop/UniPin</small>
-  </div>
-  
-  <!-- TOOL 3: Ping Test -->
-  <div class="container" id="ping">
-    <div class="brand">2K REBBORN</div>
-    <h2>FF Ping Checker</h2>
-    <p class="subtitle">Check if your ping is good for rank</p>
-    
-    <div class="nav-links">
-      <a href="#data">Data Calc</a>
-      <a href="#diamonds">Diamonds</a>
-      <a href="#guides">CODM/PUBG</a>
-    </div>
-    
-    <input type="number" id="ping" placeholder="Enter your current ping ms">
-    
-    <div class="btns">
-      <button onclick="checkPing()">Check Ping</button>
-      <button class="clear" onclick="clearPing()">Clear</button>
-    </div>
-    
-    <div class="result" id="pingResult">Result go show here</div>
-    <small style="color:#666; margin-top:10px; display:block">Tip: Use 1.1.1.1 for low ping</small>
   </div>
 
   <!-- Middle AdSense -->
   <div class="ad-container">
     <div class="ad-label">Advertisement</div>
-    <ins class="adsbygoogle"
-         style="display:block"
-         data-ad-client="ca-pub-XXXXXXXXXXXXXXXX"
-         data-ad-slot="0987654321"
-         data-ad-format="auto"
-         data-full-width-responsive="true"></ins>
+    <ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-XXXXXXXXXXXXXXXX" data-ad-slot="0987654321" data-ad-format="auto" data-full-width-responsive="true"></ins>
     <script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
   </div>
 
-  <!-- TOOL 4: CODM x PUBG Guides -->
-  <div class="container" id="guides">
+  <!-- CODM x PUBG Guides Section - Brought Back -->
+  <div class="container">
     <div class="brand">2K REBBORN</div>
-    <h2>CODM x PUBG Esports</h2>
-    <p class="subtitle">Pro tips & tournament news</p>
-    
-    <div class="nav-links">
-      <a href="#data">Data Calc</a>
-      <a href="#diamonds">Diamonds</a>
-      <a href="#ping">Ping</a>
-    </div>
-    
-    <div style="text-align:left; margin-top:20px;">
-      <h3 style="color:#ff0040; margin-bottom:10px;">🎮 CODM Tips</h3>
-      <p style="margin-bottom:15px;">Best BR landing spots + MP meta guns for 2026</p>
-      
-      <h3 style="color:#8000ff; margin-bottom:10px;">🔫 PUBG Tips</h3>
-      <p style="margin-bottom:15px;">Squad strategies + PMGC updates</p>
-      
-      <h3 style="color:#00ff88; margin-bottom:10px;">🎯 Pro Tip</h3>
-      <p>90fps + low graphics = less lag + more wins</p>
+    <h2>CODM x PUBG Pro Guides</h2>
+    <p class="subtitle">Tips and strategies for ranked matches</p>
+
+    <div class="guides-grid">
+      <div class="guide-card codm">
+        <h3>🎮 CODM Tips</h3>
+        <p><strong>Battle Royale:</strong> Best landing spots - Isolated, Nuketown, Terminal</p>
+        <p><strong>MP Meta:</strong> DR-H, Kilo 141, M4 are top guns for Season 2026</p>
+        <p><strong>Pro Tip:</strong> Use 4-finger claw for better movement and aim</p>
+      </div>
+
+      <div class="guide-card pubg">
+        <h3>🔫 PUBG Tips</h3>
+        <p><strong>Squad Strategy:</strong> Always land together, communicate enemy positions</p>
+        <p><strong>Tournaments:</strong> PMNC and PMGC updates available weekly</p>
+        <p><strong>Pro Tip:</strong> 90fps + Low graphics = less lag + more wins</p>
+      </div>
     </div>
   </div>
-  
+
   <footer>
-    <p>© 2026 2K REBBORN Esports Hub | Built for Gamers</p>
+    <p>© 2026 2K REBBORN Esports Tools | Built for Gamers</p>
   </footer>
 
   <!-- Phonk Audio -->
-  <audio id="phonkAudio" loop>
+  <audio id="phonkAudio" loop preload="auto">
     <source src="https://cdn.pixabay.com/audio/2024/11/25/audio_94c27f3a2b.mp3" type="audio/mpeg">
   </audio>
 
   <script>
-    let lastResult = '';
+    let lastDataResult = '';
     let phonkPlaying = false;
-    
+    let selectedGame = {data: 'ff', currency: 'ff', ping: 'ff'};
+
+    const gameData = {
+      ff: {name: 'Free Fire', dataRate: 80, currencyName: 'Diamonds', currencyRate: 2.5},
+      codm: {name: 'CODM', dataRate: 100, currencyName: 'CP', currencyRate: 3.2},
+      pubg: {name: 'PUBG', dataRate: 120, currencyName: 'UC', currencyRate: 2.8}
+    };
+
+    // Game Selector
+    function selectGame(tool, game, btn) {
+      selectedGame[tool] = game;
+      const container = btn.closest('.container');
+      container.querySelectorAll('.game-btn').forEach(b => b.classList.remove('active'));
+      btn.classList.add('active');
+
+      if(tool === 'data') {
+        document.getElementById('dataNote').textContent = `${gameData[game].name} uses ~${gameData[game].dataRate}MB/hour average`;
+      } else if(tool === 'currency') {
+        document.getElementById('currencyNote').textContent = `Rate: ₦${gameData[game].currencyRate} per ${gameData[game].currencyName}`;
+        document.getElementById('currencyAmount').placeholder = `Enter ${gameData[game].currencyName} needed`;
+      }
+    }
+
     // Phonk Player
     function togglePhonk() {
       const btn = document.getElementById('phonkBtn');
       const audio = document.getElementById('phonkAudio');
       if (!phonkPlaying) {
-        audio.play();
-        btn.textContent = '🔇 Stop Phonk';
-        btn.classList.add('active');
-        phonkPlaying = true;
+        audio.play().then(() => {
+          btn.textContent = '🔇 Stop Phonk';
+          btn.classList.add('active');
+          phonkPlaying = true;
+        }).catch(err => {
+          alert('Click again to start music. Browser needs user click first.');
+        });
       } else {
         audio.pause();
         btn.textContent = '🎵 Play Phonk';
@@ -281,58 +322,58 @@
         phonkPlaying = false;
       }
     }
-    
+
     // Data Calculator
-    function calculate() {
-      const hours = document.getElementById('hours').value;
-      const result = document.getElementById('result');
-      const shareBtn = document.getElementById('shareBtn');
+    function calculateData() {
+      const hours = document.getElementById('dataHours').value;
+      const game = selectedGame.data;
+      const result = document.getElementById('dataResult');
+      const shareBtn = document.getElementById('dataShareBtn');
+
       if(hours === '' || hours <= 0) {
-        result.innerHTML = 'Please enter valid hours <button class="share-btn" id="shareBtn" onclick="shareWhatsApp()" style="display:none">📲 Share on WhatsApp</button>';
+        result.innerHTML = 'Please enter valid hours <button class="share-btn" id="dataShareBtn" onclick="shareData()" style="display:none">📲 Share on WhatsApp</button>';
         return;
       }
-      const mb = hours * 80;
+      const mb = hours * gameData[game].dataRate;
       const gb = (mb / 1024).toFixed(2);
-      lastResult = `I just calculated: ${hours}hrs of Free Fire = ${mb}MB ≈ ${gb}GB 📱\nCheck your FF data usage here: ${window.location.href}`;
-      result.innerHTML = `${mb} MB <br> ≈ ${gb} GB <button class="share-btn" id="shareBtn" onclick="shareWhatsApp()">📲 Share on WhatsApp</button>`;
-      document.getElementById('shareBtn').style.display = 'block';
+      lastDataResult = `I calculated ${hours}hrs of ${gameData[game].name} = ${mb}MB ≈ ${gb}GB 📱\nCheck your data usage: ${window.location.href}`;
+      result.innerHTML = `${mb} MB <br> ≈ ${gb} GB <button class="share-btn" id="dataShareBtn" onclick="shareData()">📲 Share on WhatsApp</button>`;
+      shareBtn.style.display = 'block';
     }
-    function clearAll() {
-      document.getElementById('hours').value = '';
-      document.getElementById('result').innerHTML = 'Result go show here <button class="share-btn" id="shareBtn" onclick="shareWhatsApp()" style="display:none">📲 Share on WhatsApp</button>';
-      lastResult = '';
+    function clearData() {
+      document.getElementById('dataHours').value = '';
+      document.getElementById('dataResult').innerHTML = 'Select game and enter hours <button class="share-btn" id="dataShareBtn" onclick="shareData()" style="display:none">📲 Share on WhatsApp</button>';
+      lastDataResult = '';
     }
-    document.getElementById('hours').addEventListener('keypress', function(e) {
-      if(e.key === 'Enter') calculate();
-    });
-    
-    // WhatsApp Share
-    function shareWhatsApp() {
-      if(lastResult === '') return;
-      const url = `https://wa.me/?text=${encodeURIComponent(lastResult)}`;
-      window.open(url, '_blank');
+    function shareData() {
+      if(lastDataResult === '') return;
+      window.open(`https://wa.me/?text=${encodeURIComponent(lastDataResult)}`, '_blank');
     }
-    
-    // Diamonds Calculator
-    function calcDiamonds() {
-      const d = document.getElementById('diamonds').value;
-      const result = document.getElementById('diamondResult');
-      if(d === '' || d <= 0) {
-        result.innerHTML = 'Enter valid diamonds';
+
+    // Currency Calculator
+    function calculateCurrency() {
+      const amount = document.getElementById('currencyAmount').value;
+      const game = selectedGame.currency;
+      const result = document.getElementById('currencyResult');
+
+      if(amount === '' || amount <= 0) {
+        result.innerHTML = 'Enter valid amount';
         return;
       }
-      const price = Math.ceil(d * 2.5);
-      result.innerHTML = `${d} Diamonds <br> ≈ ₦${price}`;
+      const price = Math.ceil(amount * gameData[game].currencyRate);
+      result.innerHTML = `${amount} ${gameData[game].currencyName} <br> ≈ ₦${price}`;
     }
-    function clearDiamonds() {
-      document.getElementById('diamonds').value = '';
-      document.getElementById('diamondResult').innerHTML = 'Result go show here';
+    function clearCurrency() {
+      document.getElementById('currencyAmount').value = '';
+      document.getElementById('currencyResult').innerHTML = 'Enter amount to see price';
     }
-    
+
     // Ping Checker
     function checkPing() {
-      const p = document.getElementById('ping').value;
+      const p = document.getElementById('pingInput').value;
+      const game = selectedGame.ping;
       const result = document.getElementById('pingResult');
+
       if(p === '' || p <= 0) {
         result.innerHTML = 'Enter valid ping';
         return;
@@ -340,14 +381,14 @@
       let status = '';
       if(p < 50) status = '🟢 Excellent - No lag';
       else if(p < 100) status = '🟡 Good - Playable';
-      else if(p < 200) status = '🟠 High - Lag fit happen';
+      else if(p < 150) status = '🟠 High - Lag possible';
       else status = '🔴 Very High - Use VPN';
-      
-      result.innerHTML = `${p} ms <br> ${status}`;
+
+      result.innerHTML = `${p} ms for ${gameData[game].name} <br> ${status}`;
     }
     function clearPing() {
-      document.getElementById('ping').value = '';
-      document.getElementById('pingResult').innerHTML = 'Result go show here';
+      document.getElementById('pingInput').value = '';
+      document.getElementById('pingResult').innerHTML = 'Enter ping to check status';
     }
   </script>
 </body>
